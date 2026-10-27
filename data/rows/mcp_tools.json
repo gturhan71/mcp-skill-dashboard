@@ -52,20 +52,20 @@
     "calls": 82
   },
   {
+    "tool": "ccd_turn::wrap_up",
+    "calls": 65
+  },
+  {
     "tool": "Claude_Browser::preview_stop",
     "calls": 56
   },
   {
-    "tool": "ccd_turn::wrap_up",
-    "calls": 55
+    "tool": "ccd_turn::update_plan",
+    "calls": 51
   },
   {
     "tool": "Claude_Browser::read_network_requests",
     "calls": 47
-  },
-  {
-    "tool": "ccd_turn::update_plan",
-    "calls": 42
   },
   {
     "tool": "Claude_Code_iOS_Simulator::build",
@@ -104,19 +104,19 @@
     "calls": 9
   },
   {
+    "tool": "visualize::show_widget",
+    "calls": 8
+  },
+  {
+    "tool": "visualize::read_me",
+    "calls": 7
+  },
+  {
     "tool": "Claude_Browser::tabs_select",
     "calls": 6
   },
   {
-    "tool": "visualize::show_widget",
-    "calls": 6
-  },
-  {
     "tool": "1a59c906-04da-521d-bda7-7f71b9f9e01c::guide",
-    "calls": 6
-  },
-  {
-    "tool": "ccd_pr::get_status",
     "calls": 6
   }
 ]

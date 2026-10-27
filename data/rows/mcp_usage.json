@@ -17,7 +17,7 @@
   {
     "id": "ccd_turn",
     "label": "Turn/Plan Yonetimi (ccd_turn)",
-    "calls": 97
+    "calls": 116
   },
   {
     "id": "860b4205-5e62-4606-9d51-223bbc4d6a52",
@@ -32,7 +32,7 @@
   {
     "id": "visualize",
     "label": "Visualize Widget",
-    "calls": 11
+    "calls": 15
   },
   {
     "id": "terminal",

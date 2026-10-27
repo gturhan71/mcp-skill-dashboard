@@ -47,7 +47,7 @@
     "name": "ruflo-console (0.49.4)",
     "type": "plugin (yerel cache)",
     "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-console/0.49.4",
-    "size_bytes": 8613888,
+    "size_bytes": 8601600,
     "dependencies": [
       "Node.js (plugin script/MCP server calistirmak icin)",
       "npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)"
@@ -58,7 +58,7 @@
     "name": "ruflo-core (0.2.11)",
     "type": "plugin (yerel cache)",
     "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-core/0.2.11",
-    "size_bytes": 348160,
+    "size_bytes": 331776,
     "dependencies": [
       "Node.js (plugin script/MCP server calistirmak icin)",
       "npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)"
@@ -69,7 +69,7 @@
     "name": "ruflo-mods (0.6.2)",
     "type": "plugin (yerel cache)",
     "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-mods/0.6.2",
-    "size_bytes": 512000,
+    "size_bytes": 495616,
     "dependencies": [
       "Node.js (plugin script/MCP server calistirmak icin)"
     ],

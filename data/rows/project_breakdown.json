@@ -13,9 +13,9 @@
   },
   {
     "project": "Projects-04-Web-Platforms-Enflow",
-    "mcp_calls": 896,
+    "mcp_calls": 899,
     "skill_calls": 6,
-    "total_calls": 902
+    "total_calls": 905
   },
   {
     "project": "Projects-enflow-mock-demo",
@@ -49,9 +49,15 @@
   },
   {
     "project": "Projects-Youtube",
-    "mcp_calls": 20,
+    "mcp_calls": 21,
     "skill_calls": 0,
-    "total_calls": 20
+    "total_calls": 21
+  },
+  {
+    "project": "Projects-mcp-skill-dashboard",
+    "mcp_calls": 18,
+    "skill_calls": 0,
+    "total_calls": 18
   },
   {
     "project": "Projects-sentinel-mesh",

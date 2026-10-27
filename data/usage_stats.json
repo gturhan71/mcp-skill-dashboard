@@ -1,9 +1,9 @@
 {
   "summary": {
-    "transcript_files": 65,
-    "total_lines": 92377,
-    "parsed_lines": 92377,
-    "total_tool_calls": 15969,
+    "transcript_files": 66,
+    "total_lines": 94590,
+    "parsed_lines": 94590,
+    "total_tool_calls": 16179,
     "unique_mcp_servers": 14,
     "unique_skills": 13
   },
@@ -22,7 +22,7 @@
     ],
     [
       "ccd_turn",
-      97
+      116
     ],
     [
       "860b4205-5e62-4606-9d51-223bbc4d6a52",
@@ -34,7 +34,7 @@
     ],
     [
       "visualize",
-      11
+      15
     ],
     [
       "terminal",
@@ -119,20 +119,20 @@
       82
     ],
     [
+      "ccd_turn::wrap_up",
+      65
+    ],
+    [
       "Claude_Browser::preview_stop",
       56
     ],
     [
-      "ccd_turn::wrap_up",
-      55
+      "ccd_turn::update_plan",
+      51
     ],
     [
       "Claude_Browser::read_network_requests",
       47
-    ],
-    [
-      "ccd_turn::update_plan",
-      42
     ],
     [
       "Claude_Code_iOS_Simulator::build",
@@ -171,19 +171,19 @@
       9
     ],
     [
+      "visualize::show_widget",
+      8
+    ],
+    [
+      "visualize::read_me",
+      7
+    ],
+    [
       "Claude_Browser::tabs_select",
       6
     ],
     [
-      "visualize::show_widget",
-      6
-    ],
-    [
       "1a59c906-04da-521d-bda7-7f71b9f9e01c::guide",
-      6
-    ],
-    [
-      "ccd_pr::get_status",
       6
     ]
   ],
@@ -244,19 +244,19 @@
   "builtin_tools": [
     [
       "Bash",
-      6243
+      6342
     ],
     [
       "Edit",
-      2301
+      2318
     ],
     [
       "Read",
-      1894
+      1908
     ],
     [
       "Write",
-      934
+      960
     ],
     [
       "TaskUpdate",
@@ -264,7 +264,7 @@
     ],
     [
       "AskUserQuestion",
-      115
+      127
     ],
     [
       "TaskCreate",
@@ -272,11 +272,11 @@
     ],
     [
       "ToolSearch",
-      66
+      68
     ],
     [
       "Artifact",
-      53
+      65
     ],
     [
       "WebSearch",
@@ -284,7 +284,7 @@
     ],
     [
       "SendUserFile",
-      32
+      33
     ],
     [
       "Agent",
@@ -312,7 +312,7 @@
     ],
     [
       "ArtifactData",
-      4
+      8
     ],
     [
       "SubagentHandback",
@@ -474,7 +474,12 @@
     "2026-10-26": {
       "terminal": 4,
       "transcript-api": 1,
-      "ccd_turn": 20
+      "ccd_turn": 38,
+      "visualize": 2
+    },
+    "2026-10-27": {
+      "ccd_turn": 1,
+      "visualize": 2
     }
   },
   "daily_skill": {
@@ -519,6 +524,9 @@
       "Claude_Browser": 469,
       "ccd_session": 5
     },
+    "-Users-gokhan-turhan-Projects-mcp-skill-dashboard": {
+      "ccd_turn": 18
+    },
     "-Users-gokhan-turhan-Projects-Artirma": {
       "Claude_Browser": 96
     },
@@ -543,7 +551,7 @@
       "ccd_turn": 26,
       "1a59c906-04da-521d-bda7-7f71b9f9e01c": 20,
       "ccd_session": 10,
-      "ccd_pr": 6
+      "visualize": 9
     },
     "-Users-gokhan-turhan-Influencer-receptionist": {
       "Claude_Browser": 580,
@@ -553,7 +561,7 @@
       "terminal": 2
     },
     "-Users-gokhan-turhan-Projects-Youtube": {
-      "ccd_turn": 20
+      "ccd_turn": 21
     },
     "-Users-gokhan-turhan-Projects-enflow-site": {
       "Claude_Browser": 72,

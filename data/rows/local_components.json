@@ -9,7 +9,7 @@
   {
     "name": "ruflo-console (0.49.4)",
     "type": "plugin (yerel cache)",
-    "size_mb": 8.21,
+    "size_mb": 8.2,
     "dependencies": "Node.js (plugin script/MCP server calistirmak icin); npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)",
     "notes": "—"
   },
@@ -21,16 +21,16 @@
     "notes": "—"
   },
   {
-    "name": "ruflo-mods (0.6.2)",
+    "name": "ruflo-mods (0.7.1)",
     "type": "plugin (yerel cache)",
-    "size_mb": 0.49,
+    "size_mb": 0.48,
     "dependencies": "Node.js (plugin script/MCP server calistirmak icin)",
     "notes": "—"
   },
   {
-    "name": "ruflo-mods (0.7.1)",
+    "name": "ruflo-mods (0.6.2)",
     "type": "plugin (yerel cache)",
-    "size_mb": 0.48,
+    "size_mb": 0.47,
     "dependencies": "Node.js (plugin script/MCP server calistirmak icin)",
     "notes": "—"
   },
@@ -51,7 +51,7 @@
   {
     "name": "ruflo-core (0.2.11)",
     "type": "plugin (yerel cache)",
-    "size_mb": 0.33,
+    "size_mb": 0.32,
     "dependencies": "Node.js (plugin script/MCP server calistirmak icin); npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)",
     "notes": "MCP server(lar): ruflo"
   },
