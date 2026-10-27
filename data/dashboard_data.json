@@ -1,0 +1,746 @@
+{
+  "summary": {
+    "transcript_files": 65,
+    "total_lines": 92377,
+    "parsed_lines": 92377,
+    "total_tool_calls": 15969,
+    "unique_mcp_servers": 14,
+    "unique_skills": 13
+  },
+  "mcp_servers": [
+    {
+      "id": "Claude_Browser",
+      "label": "Built-in Browser",
+      "calls": 3090,
+      "is_remote": true
+    },
+    {
+      "id": "Claude_Code_iOS_Simulator",
+      "label": "iOS Simulator",
+      "calls": 561,
+      "is_remote": true
+    },
+    {
+      "id": "1a59c906-04da-521d-bda7-7f71b9f9e01c",
+      "label": "Claude Docs",
+      "calls": 119,
+      "is_remote": true
+    },
+    {
+      "id": "ccd_turn",
+      "label": "Turn/Plan Yonetimi (ccd_turn)",
+      "calls": 97,
+      "is_remote": true
+    },
+    {
+      "id": "860b4205-5e62-4606-9d51-223bbc4d6a52",
+      "label": "Vercel",
+      "calls": 56,
+      "is_remote": true
+    },
+    {
+      "id": "ccd_session",
+      "label": "Session Yonetimi (ccd_session)",
+      "calls": 20,
+      "is_remote": true
+    },
+    {
+      "id": "visualize",
+      "label": "Visualize Widget",
+      "calls": 11,
+      "is_remote": true
+    },
+    {
+      "id": "terminal",
+      "label": "Terminal",
+      "calls": 7,
+      "is_remote": true
+    },
+    {
+      "id": "ccd_pr",
+      "label": "PR Yonetimi (ccd_pr)",
+      "calls": 6,
+      "is_remote": true
+    },
+    {
+      "id": "transcript-api",
+      "label": "YouTube Transcript API (3. parti)",
+      "calls": 1,
+      "is_remote": true
+    },
+    {
+      "id": "scheduled-tasks",
+      "label": "Zamanlanmis Gorevler",
+      "calls": 1,
+      "is_remote": true
+    },
+    {
+      "id": "claude-in-chrome",
+      "label": "Claude in Chrome",
+      "calls": 1,
+      "is_remote": true
+    },
+    {
+      "id": "ccd_session_mgmt",
+      "label": "Session Yonetimi v2",
+      "calls": 1,
+      "is_remote": true
+    },
+    {
+      "id": "Code_placeholder",
+      "label": "Code (placeholder)",
+      "calls": 1,
+      "is_remote": true
+    }
+  ],
+  "mcp_tools_top30": [
+    [
+      "Claude_Browser::computer",
+      1300
+    ],
+    [
+      "Claude_Code_iOS_Simulator::control",
+      529
+    ],
+    [
+      "Claude_Browser::navigate",
+      380
+    ],
+    [
+      "Claude_Browser::javascript_tool",
+      245
+    ],
+    [
+      "Claude_Browser::browser_batch",
+      190
+    ],
+    [
+      "Claude_Browser::read_page",
+      187
+    ],
+    [
+      "Claude_Browser::find",
+      158
+    ],
+    [
+      "Claude_Browser::get_page_text",
+      98
+    ],
+    [
+      "Claude_Browser::preview_start",
+      96
+    ],
+    [
+      "Claude_Browser::read_console_messages",
+      95
+    ],
+    [
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c::update",
+      95
+    ],
+    [
+      "Claude_Browser::resize_window",
+      84
+    ],
+    [
+      "Claude_Browser::form_input",
+      82
+    ],
+    [
+      "Claude_Browser::preview_stop",
+      56
+    ],
+    [
+      "ccd_turn::wrap_up",
+      55
+    ],
+    [
+      "Claude_Browser::read_network_requests",
+      47
+    ],
+    [
+      "ccd_turn::update_plan",
+      42
+    ],
+    [
+      "Claude_Code_iOS_Simulator::build",
+      32
+    ],
+    [
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c::batch",
+      18
+    ],
+    [
+      "Claude_Browser::tabs_close",
+      16
+    ],
+    [
+      "Claude_Browser::tabs_create",
+      16
+    ],
+    [
+      "Claude_Browser::preview_logs",
+      15
+    ],
+    [
+      "ccd_session::mark_chapter",
+      14
+    ],
+    [
+      "Claude_Browser::tabs_context",
+      14
+    ],
+    [
+      "860b4205-5e62-4606-9d51-223bbc4d6a52::list_deployments",
+      10
+    ],
+    [
+      "860b4205-5e62-4606-9d51-223bbc4d6a52::get_deployment",
+      9
+    ],
+    [
+      "Claude_Browser::tabs_select",
+      6
+    ],
+    [
+      "visualize::show_widget",
+      6
+    ],
+    [
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c::guide",
+      6
+    ],
+    [
+      "ccd_pr::get_status",
+      6
+    ]
+  ],
+  "skills": [
+    {
+      "name": "kill-ai-slop",
+      "calls": 3,
+      "local_size_bytes": 110592,
+      "has_local_footprint": true
+    },
+    {
+      "name": "dataviz",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "anthropic-skills:docx",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "anthropic-skills:xlsx",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "artifact-design",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "pdf",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "run",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "graphify",
+      "calls": 1,
+      "local_size_bytes": 135680000,
+      "has_local_footprint": true
+    },
+    {
+      "name": "10x-Team:10x-team",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "10x-Team:qa-engineer",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "10x-Team:security-engineer",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "10x-Team:sre",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    },
+    {
+      "name": "security-review",
+      "calls": 1,
+      "local_size_bytes": 0,
+      "has_local_footprint": false
+    }
+  ],
+  "builtin_tools": [
+    [
+      "Bash",
+      6243
+    ],
+    [
+      "Edit",
+      2301
+    ],
+    [
+      "Read",
+      1894
+    ],
+    [
+      "Write",
+      934
+    ],
+    [
+      "TaskUpdate",
+      144
+    ],
+    [
+      "AskUserQuestion",
+      115
+    ],
+    [
+      "TaskCreate",
+      71
+    ],
+    [
+      "ToolSearch",
+      66
+    ],
+    [
+      "Artifact",
+      53
+    ],
+    [
+      "WebSearch",
+      43
+    ],
+    [
+      "SendUserFile",
+      32
+    ],
+    [
+      "Agent",
+      24
+    ],
+    [
+      "Monitor",
+      12
+    ],
+    [
+      "EnterPlanMode",
+      10
+    ],
+    [
+      "ExitPlanMode",
+      10
+    ],
+    [
+      "ScheduleWakeup",
+      10
+    ],
+    [
+      "WebFetch",
+      8
+    ],
+    [
+      "ArtifactData",
+      4
+    ],
+    [
+      "SubagentHandback",
+      3
+    ],
+    [
+      "ListAgents",
+      2
+    ],
+    [
+      "bash",
+      1
+    ],
+    [
+      "SendMessage",
+      1
+    ],
+    [
+      "bash-placeholder",
+      1
+    ]
+  ],
+  "daily_mcp": {
+    "2026-07-16": {
+      "Claude_Browser": 239
+    },
+    "2026-07-17": {
+      "Claude_Browser": 17
+    },
+    "2026-07-18": {
+      "Claude_Browser": 373,
+      "ccd_session": 1
+    },
+    "2026-07-19": {
+      "Claude_Browser": 128
+    },
+    "2026-07-20": {
+      "scheduled-tasks": 1
+    },
+    "2026-08-21": {
+      "Claude_Browser": 75
+    },
+    "2026-08-22": {
+      "ccd_session": 1
+    },
+    "2026-08-28": {
+      "Claude_Browser": 96
+    },
+    "2026-09-01": {
+      "Claude_Browser": 31
+    },
+    "2026-09-02": {
+      "ccd_session": 3,
+      "Claude_Browser": 141,
+      "claude-in-chrome": 1
+    },
+    "2026-09-03": {
+      "ccd_session": 2,
+      "Claude_Browser": 331
+    },
+    "2026-09-09": {
+      "Claude_Browser": 4
+    },
+    "2026-09-10": {
+      "Claude_Browser": 11
+    },
+    "2026-09-13": {
+      "Claude_Browser": 119,
+      "ccd_session": 6,
+      "ccd_session_mgmt": 1
+    },
+    "2026-09-14": {
+      "Claude_Browser": 27
+    },
+    "2026-09-15": {
+      "Claude_Browser": 3
+    },
+    "2026-09-17": {
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c": 91
+    },
+    "2026-09-18": {
+      "Claude_Browser": 106,
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c": 8
+    },
+    "2026-09-19": {
+      "visualize": 2
+    },
+    "2026-09-22": {
+      "Claude_Browser": 6
+    },
+    "2026-09-23": {
+      "Claude_Browser": 315,
+      "Claude_Code_iOS_Simulator": 180,
+      "terminal": 2,
+      "Code_placeholder": 1
+    },
+    "2026-09-24": {
+      "Claude_Code_iOS_Simulator": 305,
+      "Claude_Browser": 89,
+      "860b4205-5e62-4606-9d51-223bbc4d6a52": 10
+    },
+    "2026-09-26": {
+      "860b4205-5e62-4606-9d51-223bbc4d6a52": 11,
+      "Claude_Browser": 157,
+      "ccd_pr": 6,
+      "ccd_session": 1
+    },
+    "2026-09-27": {
+      "Claude_Browser": 52,
+      "860b4205-5e62-4606-9d51-223bbc4d6a52": 13,
+      "Claude_Code_iOS_Simulator": 76
+    },
+    "2026-09-28": {
+      "Claude_Browser": 4,
+      "visualize": 4,
+      "ccd_session": 3
+    },
+    "2026-09-30": {
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c": 17
+    },
+    "2026-10-01": {
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c": 3,
+      "Claude_Browser": 3
+    },
+    "2026-10-02": {
+      "Claude_Browser": 39,
+      "860b4205-5e62-4606-9d51-223bbc4d6a52": 16
+    },
+    "2026-10-03": {
+      "Claude_Browser": 20
+    },
+    "2026-10-11": {
+      "Claude_Browser": 208
+    },
+    "2026-10-12": {
+      "Claude_Browser": 190,
+      "ccd_session": 2
+    },
+    "2026-10-13": {
+      "Claude_Browser": 79,
+      "860b4205-5e62-4606-9d51-223bbc4d6a52": 6
+    },
+    "2026-10-16": {
+      "ccd_turn": 16,
+      "ccd_session": 1,
+      "visualize": 5
+    },
+    "2026-10-19": {
+      "ccd_turn": 4
+    },
+    "2026-10-21": {
+      "ccd_turn": 34,
+      "Claude_Browser": 227
+    },
+    "2026-10-23": {
+      "ccd_turn": 23,
+      "terminal": 1
+    },
+    "2026-10-26": {
+      "terminal": 4,
+      "transcript-api": 1,
+      "ccd_turn": 20
+    }
+  },
+  "daily_skill": {
+    "2026-07-15": {
+      "anthropic-skills:docx": 1,
+      "anthropic-skills:xlsx": 1
+    },
+    "2026-07-16": {
+      "artifact-design": 1
+    },
+    "2026-08-22": {
+      "graphify": 1
+    },
+    "2026-09-02": {
+      "dataviz": 1,
+      "kill-ai-slop": 3
+    },
+    "2026-09-21": {
+      "security-review": 1
+    },
+    "2026-09-26": {
+      "10x-Team:10x-team": 1,
+      "10x-Team:qa-engineer": 1,
+      "10x-Team:security-engineer": 1,
+      "10x-Team:sre": 1
+    },
+    "2026-10-01": {
+      "pdf": 1
+    },
+    "2026-10-03": {
+      "run": 1
+    }
+  },
+  "project_mcp": {
+    "-Users-gokhan-turhan-Projects-web-clients": {
+      "Claude_Browser": 224,
+      "ccd_turn": 51,
+      "terminal": 5,
+      "transcript-api": 1
+    },
+    "-Users-gokhan-turhan-Projects-enflow-mock-demo": {
+      "Claude_Browser": 469,
+      "ccd_session": 5
+    },
+    "-Users-gokhan-turhan-Projects-Artirma": {
+      "Claude_Browser": 96
+    },
+    "-Users-gokhan-turhan-Projects-sentinel-mesh": {
+      "visualize": 6,
+      "Claude_Browser": 4,
+      "ccd_session": 3
+    },
+    "-Users-gokhan-turhan-Projects-Garanti": {
+      "Claude_Browser": 766,
+      "Claude_Code_iOS_Simulator": 265,
+      "860b4205-5e62-4606-9d51-223bbc4d6a52": 11,
+      "ccd_session": 1,
+      "scheduled-tasks": 1
+    },
+    "-Users-gokhan-turhan-Projects-04-Web-Platforms-Dipol-code": {
+      "Claude_Browser": 45,
+      "ccd_session": 1
+    },
+    "-Users-gokhan-turhan-Projects-04-Web-Platforms-Enflow": {
+      "Claude_Browser": 834,
+      "ccd_turn": 26,
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c": 20,
+      "ccd_session": 10,
+      "ccd_pr": 6
+    },
+    "-Users-gokhan-turhan-Influencer-receptionist": {
+      "Claude_Browser": 580,
+      "Claude_Code_iOS_Simulator": 296,
+      "1a59c906-04da-521d-bda7-7f71b9f9e01c": 99,
+      "860b4205-5e62-4606-9d51-223bbc4d6a52": 25,
+      "terminal": 2
+    },
+    "-Users-gokhan-turhan-Projects-Youtube": {
+      "ccd_turn": 20
+    },
+    "-Users-gokhan-turhan-Projects-enflow-site": {
+      "Claude_Browser": 72,
+      "860b4205-5e62-4606-9d51-223bbc4d6a52": 20
+    }
+  },
+  "project_skill": {
+    "-Users-gokhan-turhan-Projects-enflow-mock-demo": {
+      "dataviz": 1
+    },
+    "-Users-gokhan-turhan-Projects-Garanti": {
+      "anthropic-skills:docx": 1,
+      "anthropic-skills:xlsx": 1,
+      "artifact-design": 1
+    },
+    "-Users-gokhan-turhan-Projects-04-Web-Platforms-Dipol-code": {
+      "kill-ai-slop": 1
+    },
+    "-Users-gokhan-turhan-Projects-04-Web-Platforms-Enflow": {
+      "kill-ai-slop": 2,
+      "pdf": 1,
+      "run": 1,
+      "graphify": 1,
+      "10x-Team:10x-team": 1
+    }
+  },
+  "local_inventory": [
+    {
+      "name": "graphify",
+      "type": "skill (yerel)",
+      "path": "/Users/gokhan_turhan/.claude/skills/graphify",
+      "size_bytes": 106496,
+      "dependencies": [
+        "Python (uv tool / pip)",
+        "PyPI: graphifyy (ayri kurulum, ~129MB)",
+        "opsiyonel: GEMINI_API_KEY, Neo4j, FalkorDB"
+      ],
+      "notes": "SKILL.md disinda calisan asil motor (graphifyy) ayri bir uv tool ortaminda."
+    },
+    {
+      "name": "kill-ai-slop",
+      "type": "skill (yerel)",
+      "path": "/Users/gokhan_turhan/.claude/skills/kill-ai-slop",
+      "size_bytes": 110592,
+      "dependencies": [
+        "Node.js (script calistirmak icin)"
+      ],
+      "notes": "Kendi ifadesiyle 'dependency-free' - sadece Node.js built-in modulleri kullaniyor."
+    },
+    {
+      "name": "graphifyy (graphify motoru)",
+      "type": "uv tool paketi",
+      "path": "/Users/gokhan_turhan/.local/share/uv/tools/graphifyy",
+      "size_bytes": 135573504,
+      "dependencies": [
+        "Python 3.x",
+        "networkx, sentence-transformers ve benzeri PyPI paketleri (uv tool venv icinde)"
+      ],
+      "notes": "graphify skill'i bu CLI'yi cagirir; skill klasorunun kendisi kucuk ama motor ~129MB."
+    },
+    {
+      "name": "ruflo-console (0.44.7)",
+      "type": "plugin (yerel cache)",
+      "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-console/0.44.7",
+      "size_bytes": 8122368,
+      "dependencies": [
+        "Node.js (plugin script/MCP server calistirmak icin)",
+        "npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)"
+      ],
+      "notes": ""
+    },
+    {
+      "name": "ruflo-console (0.49.4)",
+      "type": "plugin (yerel cache)",
+      "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-console/0.49.4",
+      "size_bytes": 8613888,
+      "dependencies": [
+        "Node.js (plugin script/MCP server calistirmak icin)",
+        "npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)"
+      ],
+      "notes": ""
+    },
+    {
+      "name": "ruflo-core (0.2.11)",
+      "type": "plugin (yerel cache)",
+      "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-core/0.2.11",
+      "size_bytes": 348160,
+      "dependencies": [
+        "Node.js (plugin script/MCP server calistirmak icin)",
+        "npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)"
+      ],
+      "notes": "MCP server(lar): ruflo"
+    },
+    {
+      "name": "ruflo-mods (0.6.2)",
+      "type": "plugin (yerel cache)",
+      "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-mods/0.6.2",
+      "size_bytes": 512000,
+      "dependencies": [
+        "Node.js (plugin script/MCP server calistirmak icin)"
+      ],
+      "notes": ""
+    },
+    {
+      "name": "ruflo-mods (0.7.1)",
+      "type": "plugin (yerel cache)",
+      "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-mods/0.7.1",
+      "size_bytes": 499712,
+      "dependencies": [
+        "Node.js (plugin script/MCP server calistirmak icin)"
+      ],
+      "notes": ""
+    },
+    {
+      "name": "ruflo-swarm (0.3.7)",
+      "type": "plugin (yerel cache)",
+      "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-swarm/0.3.7",
+      "size_bytes": 372736,
+      "dependencies": [
+        "Node.js (plugin script/MCP server calistirmak icin)"
+      ],
+      "notes": ""
+    },
+    {
+      "name": "temp_local plugin cache (gecici)",
+      "type": "plugin (gecici staging)",
+      "path": "/Users/gokhan_turhan/.claude/plugins/cache/temp_local_1792753465123_9sm8cm",
+      "size_bytes": 487424,
+      "dependencies": [
+        "Node.js/TypeScript"
+      ],
+      "notes": "Plugin kurulum/senkronizasyon sirasinda birakilan gecici staging klasoru, aktif kullanilan ayri bir plugin degil."
+    }
+  ],
+  "local_total_bytes": 154746880
+}

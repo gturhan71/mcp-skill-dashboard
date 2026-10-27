@@ -1,0 +1,108 @@
+[
+  {
+    "name": "graphify",
+    "type": "skill (yerel)",
+    "path": "/Users/gokhan_turhan/.claude/skills/graphify",
+    "size_bytes": 106496,
+    "dependencies": [
+      "Python (uv tool / pip)",
+      "PyPI: graphifyy (ayri kurulum, ~129MB)",
+      "opsiyonel: GEMINI_API_KEY, Neo4j, FalkorDB"
+    ],
+    "notes": "SKILL.md disinda calisan asil motor (graphifyy) ayri bir uv tool ortaminda."
+  },
+  {
+    "name": "kill-ai-slop",
+    "type": "skill (yerel)",
+    "path": "/Users/gokhan_turhan/.claude/skills/kill-ai-slop",
+    "size_bytes": 110592,
+    "dependencies": [
+      "Node.js (script calistirmak icin)"
+    ],
+    "notes": "Kendi ifadesiyle 'dependency-free' - sadece Node.js built-in modulleri kullaniyor."
+  },
+  {
+    "name": "graphifyy (graphify motoru)",
+    "type": "uv tool paketi",
+    "path": "/Users/gokhan_turhan/.local/share/uv/tools/graphifyy",
+    "size_bytes": 135573504,
+    "dependencies": [
+      "Python 3.x",
+      "networkx, sentence-transformers ve benzeri PyPI paketleri (uv tool venv icinde)"
+    ],
+    "notes": "graphify skill'i bu CLI'yi cagirir; skill klasorunun kendisi kucuk ama motor ~129MB."
+  },
+  {
+    "name": "ruflo-console (0.44.7)",
+    "type": "plugin (yerel cache)",
+    "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-console/0.44.7",
+    "size_bytes": 8122368,
+    "dependencies": [
+      "Node.js (plugin script/MCP server calistirmak icin)",
+      "npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)"
+    ],
+    "notes": ""
+  },
+  {
+    "name": "ruflo-console (0.49.4)",
+    "type": "plugin (yerel cache)",
+    "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-console/0.49.4",
+    "size_bytes": 8613888,
+    "dependencies": [
+      "Node.js (plugin script/MCP server calistirmak icin)",
+      "npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)"
+    ],
+    "notes": ""
+  },
+  {
+    "name": "ruflo-core (0.2.11)",
+    "type": "plugin (yerel cache)",
+    "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-core/0.2.11",
+    "size_bytes": 348160,
+    "dependencies": [
+      "Node.js (plugin script/MCP server calistirmak icin)",
+      "npx ile cekilen @claude-flow/cli (ayri npm cache, bu olcume dahil degil)"
+    ],
+    "notes": "MCP server(lar): ruflo"
+  },
+  {
+    "name": "ruflo-mods (0.6.2)",
+    "type": "plugin (yerel cache)",
+    "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-mods/0.6.2",
+    "size_bytes": 512000,
+    "dependencies": [
+      "Node.js (plugin script/MCP server calistirmak icin)"
+    ],
+    "notes": ""
+  },
+  {
+    "name": "ruflo-mods (0.7.1)",
+    "type": "plugin (yerel cache)",
+    "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-mods/0.7.1",
+    "size_bytes": 499712,
+    "dependencies": [
+      "Node.js (plugin script/MCP server calistirmak icin)"
+    ],
+    "notes": ""
+  },
+  {
+    "name": "ruflo-swarm (0.3.7)",
+    "type": "plugin (yerel cache)",
+    "path": "/Users/gokhan_turhan/.claude/plugins/cache/ruflo/ruflo-swarm/0.3.7",
+    "size_bytes": 372736,
+    "dependencies": [
+      "Node.js (plugin script/MCP server calistirmak icin)"
+    ],
+    "notes": ""
+  },
+  {
+    "name": "temp_local plugin cache (gecici)",
+    "type": "plugin (gecici staging)",
+    "path": "/Users/gokhan_turhan/.claude/plugins/cache/temp_local_1792753465123_9sm8cm",
+    "size_bytes": 487424,
+    "dependencies": [
+      "Node.js/TypeScript"
+    ],
+    "notes": "Plugin kurulum/senkronizasyon sirasinda birakilan gecici staging klasoru, aktif kullanilan ayri bir plugin degil."
+  }
+]

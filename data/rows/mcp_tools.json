@@ -1,0 +1,122 @@
+[
+  {
+    "tool": "Claude_Browser::computer",
+    "calls": 1300
+  },
+  {
+    "tool": "Claude_Code_iOS_Simulator::control",
+    "calls": 529
+  },
+  {
+    "tool": "Claude_Browser::navigate",
+    "calls": 380
+  },
+  {
+    "tool": "Claude_Browser::javascript_tool",
+    "calls": 245
+  },
+  {
+    "tool": "Claude_Browser::browser_batch",
+    "calls": 190
+  },
+  {
+    "tool": "Claude_Browser::read_page",
+    "calls": 187
+  },
+  {
+    "tool": "Claude_Browser::find",
+    "calls": 158
+  },
+  {
+    "tool": "Claude_Browser::get_page_text",
+    "calls": 98
+  },
+  {
+    "tool": "Claude_Browser::preview_start",
+    "calls": 96
+  },
+  {
+    "tool": "Claude_Browser::read_console_messages",
+    "calls": 95
+  },
+  {
+    "tool": "1a59c906-04da-521d-bda7-7f71b9f9e01c::update",
+    "calls": 95
+  },
+  {
+    "tool": "Claude_Browser::resize_window",
+    "calls": 84
+  },
+  {
+    "tool": "Claude_Browser::form_input",
+    "calls": 82
+  },
+  {
+    "tool": "Claude_Browser::preview_stop",
+    "calls": 56
+  },
+  {
+    "tool": "ccd_turn::wrap_up",
+    "calls": 55
+  },
+  {
+    "tool": "Claude_Browser::read_network_requests",
+    "calls": 47
+  },
+  {
+    "tool": "ccd_turn::update_plan",
+    "calls": 42
+  },
+  {
+    "tool": "Claude_Code_iOS_Simulator::build",
+    "calls": 32
+  },
+  {
+    "tool": "1a59c906-04da-521d-bda7-7f71b9f9e01c::batch",
+    "calls": 18
+  },
+  {
+    "tool": "Claude_Browser::tabs_close",
+    "calls": 16
+  },
+  {
+    "tool": "Claude_Browser::tabs_create",
+    "calls": 16
+  },
+  {
+    "tool": "Claude_Browser::preview_logs",
+    "calls": 15
+  },
+  {
+    "tool": "ccd_session::mark_chapter",
+    "calls": 14
+  },
+  {
+    "tool": "Claude_Browser::tabs_context",
+    "calls": 14
+  },
+  {
+    "tool": "860b4205-5e62-4606-9d51-223bbc4d6a52::list_deployments",
+    "calls": 10
+  },
+  {
+    "tool": "860b4205-5e62-4606-9d51-223bbc4d6a52::get_deployment",
+    "calls": 9
+  },
+  {
+    "tool": "Claude_Browser::tabs_select",
+    "calls": 6
+  },
+  {
+    "tool": "visualize::show_widget",
+    "calls": 6
+  },
+  {
+    "tool": "1a59c906-04da-521d-bda7-7f71b9f9e01c::guide",
+    "calls": 6
+  },
+  {
+    "tool": "ccd_pr::get_status",
+    "calls": 6
+  }
+]

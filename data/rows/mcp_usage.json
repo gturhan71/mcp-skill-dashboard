@@ -1,0 +1,72 @@
+[
+  {
+    "id": "Claude_Browser",
+    "label": "Built-in Browser",
+    "calls": 3090
+  },
+  {
+    "id": "Claude_Code_iOS_Simulator",
+    "label": "iOS Simulator",
+    "calls": 561
+  },
+  {
+    "id": "1a59c906-04da-521d-bda7-7f71b9f9e01c",
+    "label": "Claude Docs",
+    "calls": 119
+  },
+  {
+    "id": "ccd_turn",
+    "label": "Turn/Plan Yonetimi (ccd_turn)",
+    "calls": 97
+  },
+  {
+    "id": "860b4205-5e62-4606-9d51-223bbc4d6a52",
+    "label": "Vercel",
+    "calls": 56
+  },
+  {
+    "id": "ccd_session",
+    "label": "Session Yonetimi (ccd_session)",
+    "calls": 20
+  },
+  {
+    "id": "visualize",
+    "label": "Visualize Widget",
+    "calls": 11
+  },
+  {
+    "id": "terminal",
+    "label": "Terminal",
+    "calls": 7
+  },
+  {
+    "id": "ccd_pr",
+    "label": "PR Yonetimi (ccd_pr)",
+    "calls": 6
+  },
+  {
+    "id": "transcript-api",
+    "label": "YouTube Transcript API (3. parti)",
+    "calls": 1
+  },
+  {
+    "id": "scheduled-tasks",
+    "label": "Zamanlanmis Gorevler",
+    "calls": 1
+  },
+  {
+    "id": "claude-in-chrome",
+    "label": "Claude in Chrome",
+    "calls": 1
+  },
+  {
+    "id": "ccd_session_mgmt",
+    "label": "Session Yonetimi v2",
+    "calls": 1
+  },
+  {
+    "id": "Code_placeholder",
+    "label": "Code (placeholder)",
+    "calls": 1
+  }
+]

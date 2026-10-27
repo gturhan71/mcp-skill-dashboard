@@ -1,0 +1,62 @@
+[
+  {
+    "project": "Projects-Garanti",
+    "mcp_calls": 1044,
+    "skill_calls": 3,
+    "total_calls": 1047
+  },
+  {
+    "project": "Influencer-receptionist",
+    "mcp_calls": 1002,
+    "skill_calls": 0,
+    "total_calls": 1002
+  },
+  {
+    "project": "Projects-04-Web-Platforms-Enflow",
+    "mcp_calls": 896,
+    "skill_calls": 6,
+    "total_calls": 902
+  },
+  {
+    "project": "Projects-enflow-mock-demo",
+    "mcp_calls": 474,
+    "skill_calls": 1,
+    "total_calls": 475
+  },
+  {
+    "project": "Projects-web-clients",
+    "mcp_calls": 281,
+    "skill_calls": 0,
+    "total_calls": 281
+  },
+  {
+    "project": "Projects-Artirma",
+    "mcp_calls": 96,
+    "skill_calls": 0,
+    "total_calls": 96
+  },
+  {
+    "project": "Projects-enflow-site",
+    "mcp_calls": 92,
+    "skill_calls": 0,
+    "total_calls": 92
+  },
+  {
+    "project": "Projects-04-Web-Platforms-Dipol-code",
+    "mcp_calls": 46,
+    "skill_calls": 1,
+    "total_calls": 47
+  },
+  {
+    "project": "Projects-Youtube",
+    "mcp_calls": 20,
+    "skill_calls": 0,
+    "total_calls": 20
+  },
+  {
+    "project": "Projects-sentinel-mesh",
+    "mcp_calls": 13,
+    "skill_calls": 0,
+    "total_calls": 13
+  }
+]

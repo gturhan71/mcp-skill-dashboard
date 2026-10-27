@@ -1,0 +1,80 @@
+[
+  {
+    "name": "kill-ai-slop",
+    "calls": 3,
+    "local_size_mb": 0.11,
+    "has_local_footprint": true
+  },
+  {
+    "name": "dataviz",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "anthropic-skills:docx",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "anthropic-skills:xlsx",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "artifact-design",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "pdf",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "run",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "graphify",
+    "calls": 1,
+    "local_size_mb": 129.39,
+    "has_local_footprint": true
+  },
+  {
+    "name": "10x-Team:10x-team",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "10x-Team:qa-engineer",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "10x-Team:security-engineer",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "10x-Team:sre",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  },
+  {
+    "name": "security-review",
+    "calls": 1,
+    "local_size_mb": 0.0,
+    "has_local_footprint": false
+  }
+]

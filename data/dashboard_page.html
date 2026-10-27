@@ -1,0 +1,390 @@
+<style>
+  #dash-root { --dash-gutter: max(16px, env(safe-area-inset-left, 0px)); }
+
+  .lx-wrap { display: flex; flex-direction: column; gap: var(--cds-gap-lg); }
+
+  .lx-header h1 {
+    font-family: var(--font-anthropic-serif);
+    font-weight: 400;
+    font-size: var(--cds-font-size-title);
+    margin: 0 0 var(--cds-gap-xs) 0;
+  }
+  .lx-takeaway { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); margin: 0; }
+
+  .lx-note {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border-line);
+    border-radius: var(--cds-radius);
+    padding: var(--cds-pad-md);
+    font-size: var(--cds-font-size-caption);
+    color: var(--color-fg-muted);
+    line-height: 1.5;
+  }
+
+  .lx-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+    gap: var(--cds-gap-md);
+  }
+  .lx-stat-card {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border-line);
+    border-radius: var(--cds-radius);
+    padding: var(--cds-pad-lg);
+  }
+  .lx-stat-label { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin-bottom: var(--cds-gap-xs); }
+  .lx-stat-value {
+    font-family: var(--font-anthropic-serif);
+    font-size: var(--cds-font-size-title);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .lx-grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: var(--cds-gap-md); }
+
+  .lx-card {
+    background: var(--color-panel);
+    border: 1px solid var(--color-border-line);
+    border-radius: var(--cds-radius);
+    padding: var(--cds-pad-lg);
+  }
+  .lx-card h2 { font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); margin: 0 0 var(--cds-gap-xs) 0; }
+  .lx-card .lx-sub { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); margin: 0 0 var(--cds-gap-md) 0; }
+
+  .lx-bars { display: flex; flex-direction: column; gap: var(--cds-gap-sm); min-height: 4rem; }
+  .lx-bar-row { display: grid; grid-template-columns: minmax(0, 9rem) 1fr auto; align-items: center; gap: var(--cds-gap-sm); }
+  .lx-bar-label { font-size: var(--cds-font-size-caption); color: var(--color-fg); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .lx-bar-track { background: var(--cds-chart-grid, var(--color-border-line)); border-radius: var(--cds-radius); height: 0.85rem; overflow: hidden; }
+  .lx-bar-fill { height: 100%; border-radius: var(--cds-radius); }
+  .lx-bar-value { font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; color: var(--color-fg-muted); text-align: right; min-width: 2.5rem; }
+
+  .lx-chart-box { min-height: 220px; }
+  .lx-chart-box svg { width: 100%; height: auto; display: block; }
+
+  table.lx-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); }
+  table.lx-table th, table.lx-table td { text-align: left; padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); }
+  table.lx-table th { position: sticky; top: 0; background: var(--color-panel); color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); cursor: pointer; white-space: nowrap; }
+  table.lx-table td.lx-num { text-align: right; font-variant-numeric: tabular-nums; }
+  .lx-table-scroll { max-height: 22rem; overflow: auto; }
+  .lx-search {
+    width: 100%; box-sizing: border-box; margin-bottom: var(--cds-gap-sm);
+    padding: var(--cds-pad-xs) var(--cds-pad-sm); border-radius: var(--cds-radius);
+    border: 1px solid var(--color-border-line); background: var(--color-bg); color: var(--color-fg);
+    font-size: var(--cds-font-size-caption);
+  }
+
+  .lx-tooltip {
+    position: absolute; pointer-events: none; background: var(--cds-surface-popover, var(--color-panel));
+    border: 1px solid var(--cds-border, var(--color-border-line)); border-radius: var(--cds-radius);
+    box-shadow: var(--cds-shadow-popover, none); padding: var(--cds-pad-xs) var(--cds-pad-sm);
+    font-size: var(--cds-font-size-caption); color: var(--color-fg); white-space: nowrap; opacity: 0; transition: opacity .1s;
+  }
+  .lx-chart-wrap { position: relative; }
+
+  .dash-skeleton { border-radius: var(--cds-radius); }
+</style>
+
+<div class="lx-wrap">
+  <div class="lx-header">
+    <h1>MCP ve Skill Kullanım Analizi</h1>
+    <p class="lx-takeaway" id="lx-takeaway" data-read>—</p>
+  </div>
+
+  <div class="lx-note">
+    Bu panel, bu makinedeki Claude Code transkript dosyalarının (<code>~/.claude/projects/**/*.jsonl</code>) tek seferlik
+    yerel analizinden üretildi — canlı bir bağlantı değil, bir anlık görüntüdür (snapshot). Sayılar yalnızca gerçek
+    <code>tool_use</code> çağrılarını sayar (metin içi bahisler hariç). Disk kullanımı yalnızca bu makinede gerçekten
+    dosya izi bırakan yerel skill/plugin'ler için ölçülebildi; MCP sunucularının çoğu uzaktan bağlanan connector'lar
+    olduğu için diskte ayrı bir iz bırakmıyor.
+  </div>
+
+  <div class="lx-stats-grid" id="lx-stats">
+    <div class="lx-stat-card"><div class="lx-stat-label">Toplam araç çağrısı</div><div class="lx-stat-value dash-skeleton" data-stat="total_calls">—</div></div>
+    <div class="lx-stat-card"><div class="lx-stat-label">MCP çağrısı</div><div class="lx-stat-value dash-skeleton" data-stat="total_mcp">—</div></div>
+    <div class="lx-stat-card"><div class="lx-stat-label">Skill çağrısı</div><div class="lx-stat-value dash-skeleton" data-stat="total_skill">—</div></div>
+    <div class="lx-stat-card"><div class="lx-stat-label">Analiz edilen gün</div><div class="lx-stat-value dash-skeleton" data-stat="days">—</div></div>
+    <div class="lx-stat-card"><div class="lx-stat-label">Proje sayısı</div><div class="lx-stat-value dash-skeleton" data-stat="projects">—</div></div>
+    <div class="lx-stat-card"><div class="lx-stat-label">Yerel disk (skill+plugin)</div><div class="lx-stat-value dash-skeleton" data-stat="local_mb">—</div></div>
+  </div>
+
+  <div class="lx-grid-2">
+    <div class="lx-card">
+      <h2>En çok kullanılan MCP sunucuları</h2>
+      <p class="lx-sub">Tool çağrısı sayısına göre, tüm projeler toplamı</p>
+      <div class="lx-bars dash-skeleton" id="chart-mcp" data-source="mcp_usage"></div>
+    </div>
+    <div class="lx-card">
+      <h2>En çok kullanılan skiller</h2>
+      <p class="lx-sub">Skill tool çağrısı sayısına göre</p>
+      <div class="lx-bars dash-skeleton" id="chart-skill" data-source="skill_usage"></div>
+    </div>
+  </div>
+
+  <div class="lx-card">
+    <h2>Zaman içinde günlük araç kullanımı</h2>
+    <p class="lx-sub">MCP + skill çağrılarının günlük toplamı</p>
+    <div class="lx-chart-box lx-chart-wrap dash-skeleton" id="chart-daily" data-source="daily_trend">
+      <div class="lx-tooltip" id="daily-tooltip"></div>
+    </div>
+  </div>
+
+  <div class="lx-card">
+    <h2>Proje bazında kullanım</h2>
+    <p class="lx-sub">MCP + skill çağrılarının projeye göre dağılımı</p>
+    <div class="lx-bars dash-skeleton" id="chart-project" data-source="project_breakdown"></div>
+  </div>
+
+  <div class="lx-grid-2">
+    <div class="lx-card">
+      <h2>MCP araç detayı</h2>
+      <p class="lx-sub">Sunucu::araç bazında en çok çağrılan 30 araç</p>
+      <input class="lx-search" id="tools-search" placeholder="Araç ara…" aria-label="MCP araç ara">
+      <div class="lx-table-scroll">
+        <table class="lx-table dash-skeleton" data-source="mcp_tools" data-row-key="tool">
+          <thead><tr>
+            <th data-field="tool" data-sort="text">Araç</th>
+            <th data-field="calls" data-sort="num">Çağrı</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="lx-card">
+      <h2>Yerel disk kullanımı ve bağımlılıklar</h2>
+      <p class="lx-sub">Yalnızca bu makinede gerçek dosya izi olan skill/plugin'ler</p>
+      <div class="lx-table-scroll">
+        <table class="lx-table dash-skeleton" data-source="local_components" data-row-key="name">
+          <thead><tr>
+            <th data-field="name" data-sort="text">Bileşen</th>
+            <th data-field="type" data-sort="text">Tür</th>
+            <th data-field="size_mb" data-sort="num">MB</th>
+            <th data-field="dependencies" data-sort="text">Bağımlılıklar</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  const fmt = d3.format(',');
+  const fmt1 = d3.format(',.1f');
+
+  dash.calc('summary', {
+    inputs: ['mcp_usage', 'skill_usage', 'daily_trend', 'local_components', 'project_breakdown'],
+    fn: (mcp, skill, daily, local, proj) => {
+      const totalMcp = mcp.reduce((a, r) => a + r.calls, 0);
+      const totalSkill = skill.reduce((a, r) => a + r.calls, 0);
+      const localMb = local.reduce((a, r) => a + r.size_mb, 0);
+      return [{
+        total_calls: totalMcp + totalSkill,
+        total_mcp: totalMcp,
+        total_skill: totalSkill,
+        days: daily.length,
+        projects: proj.length,
+        local_mb: Math.round(localMb * 10) / 10,
+      }];
+    },
+    title: 'Ozet toplamlar',
+    description: 'mcp_usage, skill_usage, daily_trend, local_components ve project_breakdown veri kumelerinden toplanan ozet sayilar.',
+  });
+
+  function colorFor(i, n) {
+    const palette = dash.colors || ['#8884d8'];
+    return palette[i % palette.length];
+  }
+
+  function renderBars(container, rows, labelKey, valueKey) {
+    container.classList.remove('dash-skeleton');
+    container.innerHTML = '';
+    if (!rows || !rows.length) {
+      container.textContent = '';
+      return;
+    }
+    const max = d3.max(rows, (r) => r[valueKey]) || 1;
+    rows.forEach((r, i) => {
+      const row = document.createElement('div');
+      row.className = 'lx-bar-row';
+
+      const label = document.createElement('div');
+      label.className = 'lx-bar-label';
+      label.textContent = r[labelKey];
+      label.title = r[labelKey];
+
+      const track = document.createElement('div');
+      track.className = 'lx-bar-track';
+      const fill = document.createElement('div');
+      fill.className = 'lx-bar-fill';
+      fill.style.width = Math.max(2, (r[valueKey] / max) * 100) + '%';
+      fill.style.background = colorFor(i, rows.length);
+      track.appendChild(fill);
+
+      const value = document.createElement('div');
+      value.className = 'lx-bar-value';
+      value.textContent = fmt(r[valueKey]);
+
+      row.append(label, track, value);
+      container.appendChild(row);
+    });
+  }
+
+  function renderTable(table, rows, fields) {
+    table.classList.remove('dash-skeleton');
+    const tbody = table.querySelector('tbody');
+    tbody.innerHTML = '';
+    rows.forEach((r) => {
+      const tr = document.createElement('tr');
+      tr.dataset.key = r[fields[0]];
+      fields.forEach((f) => {
+        const td = document.createElement('td');
+        td.textContent = r[f];
+        if (typeof r[f] === 'number') td.classList.add('lx-num');
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  function sortableTable(table, getRows, fields) {
+    let currentRows = [];
+    let sortField = null;
+    let sortDir = 1;
+    table.querySelectorAll('th').forEach((th) => {
+      th.addEventListener('click', () => {
+        const field = th.dataset.field;
+        sortDir = sortField === field ? -sortDir : 1;
+        sortField = field;
+        const kind = th.dataset.sort;
+        const sorted = [...currentRows].sort((a, b) => {
+          if (kind === 'num') return (a[field] - b[field]) * sortDir;
+          return String(a[field]).localeCompare(String(b[field])) * sortDir;
+        });
+        renderTable(table, sorted, fields);
+      });
+    });
+    return {
+      update(rows) {
+        currentRows = rows;
+        renderTable(table, rows, fields);
+      },
+    };
+  }
+
+  const mcpToolsTableEl = document.querySelector('[data-source="mcp_tools"]');
+  const localTableEl = document.querySelector('[data-source="local_components"]');
+  const mcpToolsCtl = sortableTable(mcpToolsTableEl, null, ['tool', 'calls']);
+  const localCtl = sortableTable(localTableEl, null, ['name', 'type', 'size_mb', 'dependencies']);
+
+  let mcpToolsAll = [];
+  document.getElementById('tools-search').addEventListener('input', (e) => {
+    const q = e.target.value.trim().toLowerCase();
+    const filtered = q ? mcpToolsAll.filter((r) => r.tool.toLowerCase().includes(q)) : mcpToolsAll;
+    mcpToolsCtl.update(filtered);
+  });
+
+  function drawDailyChart(rows) {
+    const box = document.getElementById('chart-daily');
+    box.classList.remove('dash-skeleton');
+    const tooltip = document.getElementById('daily-tooltip');
+    const width = box.clientWidth || 600;
+    const height = 220;
+    const margin = { top: 12, right: 16, bottom: 28, left: 40 };
+
+    box.querySelectorAll('svg').forEach((n) => n.remove());
+    if (!rows || !rows.length) return;
+
+    const parsed = rows.map((r) => ({ date: new Date(r.date + 'T00:00:00Z'), calls: r.calls }));
+    const x = d3.scaleUtc().domain(d3.extent(parsed, (d) => d.date)).range([margin.left, width - margin.right]);
+    const y = d3.scaleLinear().domain([0, d3.max(parsed, (d) => d.calls) || 1]).nice().range([height - margin.bottom, margin.top]);
+
+    const svg = d3.create('svg').attr('viewBox', `0 0 ${width} ${height}`);
+
+    const gradId = 'lx-daily-grad';
+    const defs = svg.append('defs');
+    const grad = defs.append('linearGradient').attr('id', gradId).attr('x1', 0).attr('y1', 0).attr('x2', 0).attr('y2', 1);
+    const accent = colorFor(0, 1);
+    [[0, .26], [.25, .16], [.5, .08], [.75, .03], [1, 0]].forEach(([off, op]) => {
+      grad.append('stop').attr('offset', off).attr('style', `stop-color:${accent}`).attr('stop-opacity', op);
+    });
+
+    const yAxis = d3.axisLeft(y).ticks(4).tickSize(-(width - margin.left - margin.right));
+    const gy = svg.append('g').attr('transform', `translate(${margin.left},0)`).call(yAxis);
+    gy.select('.domain').remove();
+    gy.selectAll('line').attr('stroke', 'var(--cds-chart-grid, #8884)').attr('stroke-width', 1);
+    gy.selectAll('text').attr('font-size', null).attr('font-family', null).attr('fill', 'var(--color-fg-muted)').attr('font-size', '10px');
+
+    const xAxis = d3.axisBottom(x).ticks(Math.min(parsed.length, 6)).tickFormat(d3.utcFormat('%b %-d'));
+    const gx = svg.append('g').attr('transform', `translate(0,${height - margin.bottom})`).call(xAxis);
+    gx.select('.domain').attr('stroke', 'var(--cds-chart-axis, #8884)');
+    gx.selectAll('text').attr('font-size', null).attr('font-family', null).attr('fill', 'var(--color-fg-muted)').attr('font-size', '10px');
+    gx.selectAll('line').attr('stroke', 'var(--cds-chart-axis, #8884)');
+
+    const area = d3.area().x((d) => x(d.date)).y0(height - margin.bottom).y1((d) => y(d.calls));
+    const line = d3.line().x((d) => x(d.date)).y((d) => y(d.calls));
+
+    svg.append('path').datum(parsed).attr('d', area).attr('fill', `url(#${gradId})`).attr('stroke', 'none');
+    svg.append('path').datum(parsed).attr('d', line).attr('fill', 'none').attr('stroke', accent).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round');
+
+    const focus = svg.append('circle').attr('r', 4).attr('fill', accent).style('display', 'none');
+
+    const bisect = d3.bisector((d) => d.date).center;
+    svg.append('rect')
+      .attr('x', margin.left).attr('y', margin.top)
+      .attr('width', Math.max(0, width - margin.left - margin.right))
+      .attr('height', Math.max(0, height - margin.top - margin.bottom))
+      .attr('fill', 'transparent')
+      .on('mousemove', (event) => {
+        const [mx] = d3.pointer(event);
+        const i = bisect(parsed, x.invert(mx));
+        const d = parsed[Math.max(0, Math.min(parsed.length - 1, i))];
+        if (!d) return;
+        focus.style('display', null).attr('cx', x(d.date)).attr('cy', y(d.calls));
+        tooltip.style.opacity = 1;
+        tooltip.style.left = x(d.date) + 'px';
+        tooltip.style.top = (y(d.calls) - 36) + 'px';
+        tooltip.textContent = d3.utcFormat('%b %-d')(d.date) + ' — ' + fmt(d.calls) + ' cagri';
+      })
+      .on('mouseleave', () => { focus.style('display', 'none'); tooltip.style.opacity = 0; });
+
+    box.appendChild(svg.node());
+    box.appendChild(tooltip);
+  }
+
+  dash.onData(() => {
+    const mcp = dash.data('mcp_usage');
+    const skill = dash.data('skill_usage');
+    const daily = dash.data('daily_trend');
+    const proj = dash.data('project_breakdown');
+    const tools = dash.data('mcp_tools');
+    const local = dash.data('local_components');
+    const summary = dash.data('summary');
+
+    if (mcp.status === 'ok') renderBars(document.getElementById('chart-mcp'), mcp.data, 'label', 'calls');
+    if (skill.status === 'ok') renderBars(document.getElementById('chart-skill'), skill.data, 'name', 'calls');
+    if (proj.status === 'ok') renderBars(document.getElementById('chart-project'), proj.data, 'project', 'total_calls');
+    if (daily.status === 'ok') drawDailyChart(daily.data);
+
+    if (tools.status === 'ok') {
+      mcpToolsAll = tools.data;
+      mcpToolsCtl.update(tools.data);
+    }
+    if (local.status === 'ok') {
+      localCtl.update(local.data);
+    }
+
+    if (summary.status === 'ok' && summary.data && summary.data[0]) {
+      const s = summary.data[0];
+      document.querySelectorAll('[data-stat]').forEach((el) => {
+        el.classList.remove('dash-skeleton');
+        const key = el.dataset.stat;
+        if (key === 'local_mb') { el.textContent = fmt1(s[key]) + ' MB'; }
+        else { el.textContent = fmt(s[key]); }
+      });
+      document.getElementById('lx-takeaway').textContent =
+        `${s.projects} projede, ${s.days} farkli gunde toplam ${fmt(s.total_calls)} tool cagrisi — ${fmt(s.total_mcp)} MCP, ${fmt(s.total_skill)} skill cagrisi.`;
+    }
+  });
+})();
+</script>
